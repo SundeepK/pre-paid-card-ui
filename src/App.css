@@ -21,10 +21,15 @@
 }
 
 .searchForm {
-  padding: 5px;
+  padding-top: 2%;
   width: 500px;
 }
 
 .transactionTable {
   padding: 2%;
+}
+
+.balance {
+  padding-left: 2%;
+
 }
