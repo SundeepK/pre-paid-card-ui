@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Button, FormGroup, ControlLabel, FormControl, Form, Col} from 'react-bootstrap';
 import TransactionTable from './TransactionsTable'
 
+const PRE_PAID_CARD_HOST = process.env.REACT_APP_PRE_PAID_CARD_URL ? process.env.REACT_APP_PRE_PAID_CARD_URL : 'https://pre-paird-card-dev.eu-west-1.elasticbeanstalk.com';
+
 class SearchTransactionsForm extends Component {
 
     constructor(props) {
@@ -25,9 +27,9 @@ class SearchTransactionsForm extends Component {
                 .map(sorted => `sort=${sorted.id},${sorted.desc? 'desc' : 'asc'}`)
                 .join('&');
         }
-        if (this.cardId && this.cardId.value.length > 0) {
+        if (this.cardId && this.cardId.value.length > 0 && parseInt(this.cardId.value, 10) > 0) {
             this.setState({loading: true});
-            let url = `http://localhost:8080/cards/${this.cardId.value}/transactions?page=${page}&size=${pageSize}&${sortParams}`;
+            let url = `${PRE_PAID_CARD_HOST}/cards/${this.cardId.value}/transactions?page=${page}&size=${pageSize}&${sortParams}`;
             console.log(`Fetching transactions: ${url}`);
             return fetch(url)
                 .then((response) => {
