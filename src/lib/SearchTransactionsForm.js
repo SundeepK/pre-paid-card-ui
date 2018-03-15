@@ -80,7 +80,7 @@ class SearchTransactionsForm extends Component {
         let page = state.page ? state.page : 0;
         let pageSize = state.pageSize ? state.pageSize : 10;
         let sortParams = 'sort=epochMillis,desc';
-        if (state.sorted) {
+        if (state.sorted && state.sorted.length > 0) {
             sortParams = state.sorted
                 .map(sorted => `sort=${sorted.id},${sorted.desc ? 'desc' : 'asc'}`)
                 .join('&');

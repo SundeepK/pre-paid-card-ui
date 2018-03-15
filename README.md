@@ -3,6 +3,12 @@
 # Requirements
 Recent version of Nodejs and npm.
 
+Install dependencies through:
+
+```npm
+    $ npm install
+```
+
 To run and connect to remote api use: 
 ```bash
     $ npm start
