@@ -67,7 +67,7 @@ class SearchTransactionsForm extends Component {
     submit(state, instance) {
         let page = state.page ? state.page : 0;
         let pageSize = state.pageSize ? state.pageSize : 10;
-        let sortParams = 'sort=epocMillis,desc';
+        let sortParams = 'sort=epochMillis,desc';
         if (state.sorted) {
             sortParams = state.sorted
                 .map(sorted => `sort=${sorted.id},${sorted.desc ? 'desc' : 'asc'}`)
