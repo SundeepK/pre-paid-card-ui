@@ -41,7 +41,13 @@ class SearchTransactionsForm extends Component {
                         transactions: []
                     })
                 }
-            });
+            }).catch(e => {
+            console.error(e);
+            this.setState({
+                loading: false,
+                transactions: []
+            })
+        });
     }
 
     loadBal(){
@@ -61,7 +67,13 @@ class SearchTransactionsForm extends Component {
                         bal: 0
                     })
                 }
+            }).catch(e => {
+            console.error(e);
+            this.setState({
+                loading: false,
+                bal: []
             })
+        })
     }
 
     submit(state, instance) {
