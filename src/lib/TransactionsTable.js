@@ -50,7 +50,7 @@ class TransactionsTable extends React.Component {
                                 },
                                 {
                                     Header: "date",
-                                    id: "epocMillis",
+                                    id: "epochMillis",
                                     accessor: d => new Date(d.epochMillis).toUTCString()
                                 }
                             ]
